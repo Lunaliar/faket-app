@@ -1,0 +1,176 @@
+#root {
+	text-align: center;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--bgColor);
+}
+:root {
+	--bgColor: #b8b8ff;
+	--bgNav: #9381ff;
+	--bgChat: #f8f7ff;
+	--outliner: #ffd8be;
+	--titleTxt: #ffeedd;
+}
+
+.App {
+	display: flex;
+	flex-direction: column;
+	padding: 1em;
+	align-items: center;
+	justify-content: space-between;
+	.Faker {
+		display: flex;
+		align-items: center;
+		width: 80vw;
+		height: 80vh;
+		.Sidebar {
+			width: 30%;
+			height: 95%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 1rem 0;
+			justify-content: space-around;
+			background-color: var(--bgNav);
+			z-index: 5;
+			border-radius: 0.7em;
+			box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.1),
+				inset 0 0 25px #898392;
+			.Title {
+				color: var(--titleTxt);
+				.TitleIcon {
+					font-size: 10em;
+					//! box-shadow: 0 19px 38px rgba(0, 0, 0, 0.2),
+					//! 	0 15px 12px rgba(0, 0, 0, 0.1);
+				}
+				h3 {
+					margin: 0;
+					font-size: 2em;
+				}
+			}
+			.Buttons {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-around;
+				min-height: 30%;
+				button {
+					outline: none;
+					color: var(--titleTxt);
+					font-size: 2.5em;
+					padding: 0.5rem;
+					font-weight: 600;
+					background: transparent;
+					border-radius: 1rem;
+					border: 0.5rem solid var(--titleTxt);
+				}
+				button :focus {
+					transform: scale(0.7);
+				}
+			}
+		}
+		.Chatter {
+			width: 70%;
+			height: 92%;
+			display: grid;
+			grid-template-rows: 90% 10%;
+			border-left: none;
+			border-top-right-radius: 0.5rem;
+			border-bottom-right-radius: 0.7rem;
+			box-shadow: 0 19px 38px rgba(0, 0, 0, 0.2), 0 15px 12px rgba(0, 0, 0, 0.1);
+			.Chat {
+				background-color: white;
+				// max-width: 0;
+				height: auto;
+				.Name {
+					height: 7%;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					background-color: gray;
+					h4 {
+						color: green;
+						margin: 0;
+					}
+					div {
+						input {
+							color: red;
+						}
+						button {
+							color: blue;
+						}
+					}
+				}
+				.Messages::-webkit-scrollbar {
+					display: none; /* Safari and Chrome */
+				}
+				.Messages {
+					height: 93%;
+					background-color: white;
+					display: flex;
+					flex-direction: column;
+					padding: 0.8em;
+					border: solid 1px #eee;
+					overflow: scroll;
+					overflow-x: hidden;
+					-ms-overflow-style: none; /* Internet Explorer 10+ */
+					scrollbar-width: none; /* Firefox */
+
+					.Message {
+						font-size: 1em;
+						border-radius: 1rem;
+						font-weight: 700;
+						margin: 1rem;
+						align-self: start;
+						background-color: #d3d3d3;
+						padding: 0.5rem 1rem;
+						max-width: 50%;
+					}
+					.Sent {
+						color: white;
+						align-self: end;
+						background-color: #147efb;
+					}
+					.Recent.false {
+						border-bottom-left-radius: 0;
+					}
+					.Recent.Sent {
+						border-bottom-right-radius: 0;
+					}
+				}
+			}
+			.Inputer {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: var(--bgNav);
+				border-bottom-right-radius: 0.7rem;
+				input {
+					height: 90%;
+					background: white;
+					outline: none;
+					border: none;
+					border-radius: 0.6rem;
+					width: auto;
+					font-size: 1.5em;
+					padding: 0 0.5rem;
+					text-indent: 1rem;
+				}
+				.icon {
+					margin: auto;
+					cursor: pointer;
+					font-size: 3.3em;
+				}
+				.send {
+					color: aqua;
+				}
+				.recieve {
+					color: red;
+					transform: scaleX(-1);
+				}
+			}
+		}
+	}
+}
